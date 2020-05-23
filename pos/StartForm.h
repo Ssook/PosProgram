@@ -1,6 +1,6 @@
 #pragma once
 #include "TableForm.h"
-#include "Table.h"""
+#include "Table.h"
 
 namespace pos {
 

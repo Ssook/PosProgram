@@ -1,7 +1,5 @@
-﻿  DetailForm.cpp
-  StartForm.cpp
-c:\project\posprogram\pos\tableform.h(236): error C3673: 'pos::DetailForm': 클래스에 복사 생성자가 없습니다.
-c:\project\posprogram\pos\startform.h(3): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+﻿  StartForm.cpp
   TableForm.cpp
-c:\project\posprogram\pos\tableform.h(236): error C3673: 'pos::DetailForm': 클래스에 복사 생성자가 없습니다.
   코드를 생성하고 있습니다...
+  MenuItem.obj : MSIL 모듈이 발견되었습니다. MSIL에 증분 링크를 사용할 수 없습니다. 전체 링크를 수행하고 있습니다.
+  pos.vcxproj -> C:\project\PosProgram\Debug\pos.exe

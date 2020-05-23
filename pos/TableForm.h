@@ -9,7 +9,6 @@ namespace pos {
 	using namespace System::Data;
 	using namespace System::Drawing;
 
-	Table table[30];
 	/// <summary>
 	/// TableForm에 대한 요약입니다.
 	/// </summary>
