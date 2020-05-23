@@ -4,7 +4,7 @@ using namespace System::Windows::Forms;
 
 [STAThreadAttribute]
 
-void main(array<String^>^ args) {
+void main() {
 	Application::EnableVisualStyles();
 	Application::SetCompatibleTextRenderingDefault(false);
 	pos::StartForm form;

@@ -18,13 +18,13 @@
     <ClCompile Include="MenuItem.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="StartForm.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="TableForm.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="DetailForm.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="StartForm.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
