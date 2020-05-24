@@ -89,6 +89,7 @@ namespace pos {
 	
 	}
 	private: System::Void Start_Load(System::Object^ sender, System::EventArgs^ e) {
+		
 	}
 
 

@@ -1,7 +1,8 @@
 #pragma once
 #include "Table.h"
 namespace pos {
-
+	
+	
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
@@ -17,14 +18,7 @@ namespace pos {
 	public:
 		int i = 0;
 
-		DetailForm(void)
-		{
-			InitializeComponent();
-			//
-			//TODO: 생성자 코드를 여기에 추가합니다.
-			//
-		}
-		DetailForm(Table test)
+		DetailForm(Table *order_table)
 		{
 			InitializeComponent();
 			//
@@ -630,7 +624,6 @@ namespace pos {
 private: System::Void redirecMain(System::Object^  sender, System::EventArgs^  e) {
 	this->Owner->Visible = true;
 	this->Close();
-
 }
 };
 }

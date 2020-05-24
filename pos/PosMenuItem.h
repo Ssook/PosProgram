@@ -2,15 +2,16 @@
 #include<iostream>
 #include<string>
 using namespace std;
-class MenuItem {
+
+class PosMenuItem {
 private : 
 	string _name;
 	int _price;
 	int _category;
 
 public:
-	MenuItem();
-	MenuItem(string name, int price, int category);
+	PosMenuItem();
+	PosMenuItem(string name, int price, int category);
 	void setName(string name) {
 		_name = name;
 	}

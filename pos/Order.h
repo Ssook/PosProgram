@@ -1,27 +1,29 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include "MenuItem.h"
+#include "PosMenuItem.h"
+using namespace std;
 
 class Order {
 private :
-	MenuItem _menu;
+	PosMenuItem _menu;
 	int _quantity;
 public:
-	Order();
-	Order(MenuItem menu, int quantity) {
+	Order() {
+	}
+	Order(PosMenuItem menu, int quantity) {
 		_menu = menu;
 		_quantity = quantity;
 	}
 
-	void setMenu(MenuItem menu) {
+	void setMenu(PosMenuItem menu) {
 		_menu = menu;
 	}
 	void setQuantity(int quantity) {
 		_quantity = quantity;
 	}
 
-	MenuItem getMenu() {
+	PosMenuItem getMenu() {
 		return _menu;
 	}
 	int getQuantity() {
