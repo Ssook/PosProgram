@@ -1,7 +1,6 @@
 #pragma once
 #include "DetailForm.h"
 #include "Table.h"
-#include<list>
 
 namespace pos {
 
@@ -11,10 +10,6 @@ namespace pos {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-	//
-
-
-	//
 	/// <summary>
 	/// TableForm에 대한 요약입니다.
 	/// </summary>
@@ -97,69 +92,6 @@ namespace pos {
 	private: System::Windows::Forms::ColorDialog^  colorDialog1;
 	private: System::Windows::Forms::ColorDialog^  colorDialog2;
 	private: System::Windows::Forms::ColorDialog^  colorDialog3;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	protected:
 
 	private:
@@ -244,6 +176,7 @@ namespace pos {
 			this->label1->Size = System::Drawing::Size(45, 15);
 			this->label1->TabIndex = 1;
 			this->label1->Text = L"label1";
+
 			// 
 			// label2
 			// 
@@ -262,6 +195,8 @@ namespace pos {
 			this->label3->Size = System::Drawing::Size(80, 15);
 			this->label3->TabIndex = 3;
 			this->label3->Text = L"1번 테이블";
+			this->label3->Click += gcnew System::EventHandler(this, &TableForm::listView1_Click);
+
 			// 
 			// label4
 			// 
@@ -289,6 +224,8 @@ namespace pos {
 			this->label6->Size = System::Drawing::Size(80, 15);
 			this->label6->TabIndex = 5;
 			this->label6->Text = L"2번 테이블";
+			this->label6->Click += gcnew System::EventHandler(this, &TableForm::listView2_Click);
+
 			// 
 			// listView2
 			// 
@@ -541,17 +478,43 @@ namespace pos {
 		this->label16->Text = "" + table6->getTotalPrice();
 
 		//
-		for (int i = 0; i < 6; i++) {
-			System::Windows::Forms::ListViewItem^ listViewItem = gcnew Windows::Forms::ListViewItem("쓋");
-			listViewItem->SubItems->Add("제발");
+		for (int i = 0; i < table1->getSize(); i++) {
+			String^ newSystemString = gcnew String(table1->getOrder(i).getMenuName().c_str());
+			System::Windows::Forms::ListViewItem^ listViewItem = gcnew Windows::Forms::ListViewItem(newSystemString);
+			listViewItem->SubItems->Add("" + table1->getOrder(i).getQuantity());
 			this->listView1->Items->Add(listViewItem);
 		}
-
-		for (int i = 0; i < 6; i++) {
-			System::Windows::Forms::ListViewItem^ listViewItem = gcnew Windows::Forms::ListViewItem("쓋"+i);
-			listViewItem->SubItems->Add("제발");
+		for (int i = 0; i < table2->getSize(); i++) {
+			String^ newSystemString = gcnew String(table2->getOrder(i).getMenuName().c_str());
+			System::Windows::Forms::ListViewItem^ listViewItem = gcnew Windows::Forms::ListViewItem(newSystemString);
+			listViewItem->SubItems->Add("" + table2->getOrder(i).getQuantity());
 			this->listView2->Items->Add(listViewItem);
 		}
+		for (int i = 0; i < table3->getSize(); i++) {
+			String^ newSystemString = gcnew String(table3->getOrder(i).getMenuName().c_str());
+			System::Windows::Forms::ListViewItem^ listViewItem = gcnew Windows::Forms::ListViewItem(newSystemString);
+			listViewItem->SubItems->Add("" + table3->getOrder(i).getQuantity());
+			this->listView3->Items->Add(listViewItem);
+		}
+		for (int i = 0; i < table4->getSize(); i++) {
+			String^ newSystemString = gcnew String(table4->getOrder(i).getMenuName().c_str());
+			System::Windows::Forms::ListViewItem^ listViewItem = gcnew Windows::Forms::ListViewItem(newSystemString);
+			listViewItem->SubItems->Add("" + table4->getOrder(i).getQuantity());
+			this->listView4->Items->Add(listViewItem);
+		}
+		for (int i = 0; i < table5->getSize(); i++) {
+			String^ newSystemString = gcnew String(table5->getOrder(i).getMenuName().c_str());
+			System::Windows::Forms::ListViewItem^ listViewItem = gcnew Windows::Forms::ListViewItem(newSystemString);
+			listViewItem->SubItems->Add("" + table5->getOrder(i).getQuantity());
+			this->listView5->Items->Add(listViewItem);
+		}
+		for (int i = 0; i < table6->getSize(); i++) {
+			String^ newSystemString = gcnew String(table6->getOrder(i).getMenuName().c_str());
+			System::Windows::Forms::ListViewItem^ listViewItem = gcnew Windows::Forms::ListViewItem(newSystemString);
+			listViewItem->SubItems->Add("" + table6->getOrder(i).getQuantity());
+			this->listView6->Items->Add(listViewItem);
+		}
+
 	}
 
 	private:
@@ -560,6 +523,14 @@ namespace pos {
 			pos::DetailForm detailform(table1);
 			detailform.Owner = this;
 			detailform.ShowDialog();
+			this->listView1->Items->Clear();
+
+			for (int i = 0; i < table1->getSize(); i++) {
+				String^ newSystemString = gcnew String(table1->getOrder(i).getMenuName().c_str());
+				System::Windows::Forms::ListViewItem^ listViewItem = gcnew Windows::Forms::ListViewItem(newSystemString);
+				listViewItem->SubItems->Add("" + table1->getOrder(i).getQuantity());
+				this->listView1->Items->Add(listViewItem);
+			}
 
 		}
 		System::Void listView2_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -567,6 +538,14 @@ namespace pos {
 			pos::DetailForm detailform(table2);
 			detailform.Owner = this;
 			detailform.ShowDialog();
+			this->listView2->Items->Clear();
+
+			for (int i = 0; i < table2->getSize(); i++) {
+				String^ newSystemString = gcnew String(table2->getOrder(i).getMenuName().c_str());
+				System::Windows::Forms::ListViewItem^ listViewItem = gcnew Windows::Forms::ListViewItem(newSystemString);
+				listViewItem->SubItems->Add("" + table2->getOrder(i).getQuantity());
+				this->listView2->Items->Add(listViewItem);
+			}
 
 		}
 		System::Void listView3_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -574,6 +553,14 @@ namespace pos {
 			pos::DetailForm detailform(table3);
 			detailform.Owner = this;
 			detailform.ShowDialog();
+			this->listView3->Items->Clear();
+
+			for (int i = 0; i < table3->getSize(); i++) {
+				String^ newSystemString = gcnew String(table3->getOrder(i).getMenuName().c_str());
+				System::Windows::Forms::ListViewItem^ listViewItem = gcnew Windows::Forms::ListViewItem(newSystemString);
+				listViewItem->SubItems->Add("" + table3->getOrder(i).getQuantity());
+				this->listView3->Items->Add(listViewItem);
+			}
 
 		}
 		System::Void listView4_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -581,13 +568,28 @@ namespace pos {
 			pos::DetailForm detailform(table4);
 			detailform.Owner = this;
 			detailform.ShowDialog();
+			this->listView4->Items->Clear();
 
+			for (int i = 0; i < table4->getSize(); i++) {
+				String^ newSystemString = gcnew String(table4->getOrder(i).getMenuName().c_str());
+				System::Windows::Forms::ListViewItem^ listViewItem = gcnew Windows::Forms::ListViewItem(newSystemString);
+				listViewItem->SubItems->Add("" + table4->getOrder(i).getQuantity());
+				this->listView4->Items->Add(listViewItem);
+			}
 		}
 		System::Void listView5_Click(System::Object^  sender, System::EventArgs^  e) {
 			this->Visible = false;
 			pos::DetailForm detailform(table5);
 			detailform.Owner = this;
 			detailform.ShowDialog();
+			this->listView5->Items->Clear();
+
+			for (int i = 0; i < table5->getSize(); i++) {
+				String^ newSystemString = gcnew String(table5->getOrder(i).getMenuName().c_str());
+				System::Windows::Forms::ListViewItem^ listViewItem = gcnew Windows::Forms::ListViewItem(newSystemString);
+				listViewItem->SubItems->Add("" + table5->getOrder(i).getQuantity());
+				this->listView5->Items->Add(listViewItem);
+			}
 
 		}
 		System::Void listView6_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -595,7 +597,17 @@ namespace pos {
 			pos::DetailForm detailform(table6);
 			detailform.Owner = this;
 			detailform.ShowDialog();
+			this->listView6->Items->Clear();
+
+			for (int i = 0; i < table6->getSize(); i++) {
+				String^ newSystemString = gcnew String(table6->getOrder(i).getMenuName().c_str());
+				System::Windows::Forms::ListViewItem^ listViewItem = gcnew Windows::Forms::ListViewItem(newSystemString);
+				listViewItem->SubItems->Add("" + table6->getOrder(i).getQuantity());
+				this->listView6->Items->Add(listViewItem);
+			}
 
 		}
+
+
 	};
 }

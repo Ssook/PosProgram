@@ -22,11 +22,30 @@ public:
 	}
 
 	void setOrder(Order order) {
-		_orderList[_size] = order;
-		_size++;
+		int flag = 0;
+		for (int i = 0; i < _size; i++) {
+			if (order.getMenuName() ==_orderList[i].getMenuName()) {
+				_orderList[i].setQuantity(_orderList[i].getQuantity()+1);
+				flag = 1;
+			}
+		}
+
+		if (flag == 0) {
+			_orderList[_size] = order;
+			_size++;
+		}
+
 	}
 
 	int getTotalPrice() {
 		return _totalPrice;
+	}
+
+	int getSize() {
+		return _size;
+	}
+
+	Order getOrder(int no) {
+		return _orderList[no];
 	}
 };

@@ -29,4 +29,8 @@ public:
 	int getQuantity() {
 		return _quantity;
 	}
+
+	string getMenuName() {
+		return _menu.getName();
+	}
 };
