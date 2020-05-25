@@ -1,6 +1,11 @@
-﻿  StartForm.cpp
+﻿  DBConnection.cpp
+  PaymentForm.cpp
+  PosMenuItem.cpp
+  StartForm.cpp
+  Table.cpp
   TableForm.cpp
   DetailForm.cpp
   코드를 생성하고 있습니다...
+  .NETFramework,Version=v4.6.1.AssemblyAttributes.cpp
   DBConnection.obj : MSIL 모듈이 발견되었습니다. MSIL에 증분 링크를 사용할 수 없습니다. 전체 링크를 수행하고 있습니다.
   pos.vcxproj -> C:\project\PosProgram\Debug\pos.exe

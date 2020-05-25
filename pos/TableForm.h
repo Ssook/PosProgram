@@ -15,7 +15,7 @@ namespace pos {
 	public ref class TableForm : public System::Windows::Forms::Form
 	{
 
-	public:
+	private:
 		Table *table1;
 		Table *table2;
 		Table *table3;
@@ -57,19 +57,21 @@ namespace pos {
 	private: System::Windows::Forms::Label^  label18;
 	private: System::Windows::Forms::ListView^  listView6;
 	private: System::Windows::Forms::ColumnHeader^  columnHeader11;
+	private: System::Windows::Forms::Button^  button1;
 	private: System::Windows::Forms::ColumnHeader^  columnHeader12;
 
 
 	public:
-		TableForm(void)
+		TableForm(Table *table1, Table *table2, Table *table3, Table *table4, Table *table5, Table *table6)
 		{
 			InitializeComponent();
-			table1 = new Table();
-			table2 = new Table();
-			table3 = new Table();
-			table4 = new Table();
-			table5 = new Table();
-			table6 = new Table();
+			this->table1 = table1;
+			this->table2 = table2;
+			this->table3 = table3;
+			this->table4 = table4;
+			this->table5 = table5;
+			this->table6 = table6;
+
 			//
 			//TODO: 생성자 코드를 여기에 추가합니다.
 			//
@@ -144,6 +146,7 @@ namespace pos {
 			this->listView6 = (gcnew System::Windows::Forms::ListView());
 			this->columnHeader11 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->columnHeader12 = (gcnew System::Windows::Forms::ColumnHeader());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// listView1
@@ -174,7 +177,6 @@ namespace pos {
 			this->label1->Size = System::Drawing::Size(45, 15);
 			this->label1->TabIndex = 1;
 			this->label1->Text = L"label1";
-
 			// 
 			// label2
 			// 
@@ -194,7 +196,6 @@ namespace pos {
 			this->label3->TabIndex = 3;
 			this->label3->Text = L"1번 테이블";
 			this->label3->Click += gcnew System::EventHandler(this, &TableForm::listView1_Click);
-
 			// 
 			// label4
 			// 
@@ -223,7 +224,6 @@ namespace pos {
 			this->label6->TabIndex = 5;
 			this->label6->Text = L"2번 테이블";
 			this->label6->Click += gcnew System::EventHandler(this, &TableForm::listView2_Click);
-
 			// 
 			// listView2
 			// 
@@ -272,8 +272,6 @@ namespace pos {
 			this->label9->TabIndex = 9;
 			this->label9->Text = L"3번 테이블";
 			this->label9->Click += gcnew System::EventHandler(this, &TableForm::listView3_Click);
-
-
 			// 
 			// listView3
 			// 
@@ -435,11 +433,23 @@ namespace pos {
 			// 
 			this->columnHeader12->Text = L"수량";
 			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(-2, 6);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(45, 54);
+			this->button1->TabIndex = 24;
+			this->button1->Text = L"뒤로";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &TableForm::button1_Click);
+			// 
 			// TableForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 15);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(793, 544);
+			this->ControlBox = false;
+			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label16);
 			this->Controls->Add(this->label17);
 			this->Controls->Add(this->label18);
@@ -464,6 +474,7 @@ namespace pos {
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->listView1);
+			this->DoubleBuffered = true;
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"TableForm";
 			this->Text = L"TableForm";
@@ -617,5 +628,10 @@ namespace pos {
 		}
 
 
-	};
+	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+		this->Owner->Visible = true;
+		this->Close();
+
+	}
+};
 }

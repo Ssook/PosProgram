@@ -136,6 +136,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DBConnection.cpp" />
+    <ClCompile Include="PaymentForm.cpp" />
     <ClCompile Include="PosMenuItem.cpp" />
     <ClCompile Include="StartForm.cpp" />
     <ClCompile Include="Table.cpp" />
@@ -144,6 +145,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DBConnection.h" />
+    <ClInclude Include="PaymentForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="PosMenuItem.h" />
     <ClInclude Include="StartForm.h">
       <FileType>CppForm</FileType>
@@ -158,6 +162,9 @@
     <ClInclude Include="Table.h" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="PaymentForm.resx">
+      <DependentUpon>PaymentForm.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StartForm.resx">
       <DependentUpon>StartForm.h</DependentUpon>
     </EmbeddedResource>
