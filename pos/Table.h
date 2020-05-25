@@ -8,24 +8,24 @@ class Table {
 private:
 	int _no;
 	Order _orderList[100];
-	int _totalPrice=0;
-	int _leftPrice=0;
-	int _size=0;
-	
+	int _totalPrice = 0;
+	int _leftPrice = 0;
+	int _payPrice = 0;
+	int _size = 0;
+
 public:
 	Table();
 	void setTotalPrice(int total_price) {
 		_totalPrice = total_price;
 	}
-	void setLeftPrice(int left_price) {
-		_leftPrice = left_price;
+	void setPayPrice(int pay_price) {
+		_payPrice += pay_price;
 	}
-
 	void setOrder(Order order) {
 		int flag = 0;
 		for (int i = 0; i < _size; i++) {
-			if (order.getMenuName() ==_orderList[i].getMenuName()) {
-				_orderList[i].setQuantity(_orderList[i].getQuantity()+1);
+			if (order.getMenuName() == _orderList[i].getMenuName()) {
+				_orderList[i].setQuantity(_orderList[i].getQuantity() + 1);
 				flag = 1;
 			}
 		}
@@ -41,6 +41,15 @@ public:
 		return _totalPrice;
 	}
 
+	int getLeftPrice() {
+		_leftPrice = _totalPrice - _payPrice;
+
+		if (_leftPrice == 0) {
+			exitTable();
+			return 0;
+		}
+		return _leftPrice;
+	}	
 	int getSize() {
 		return _size;
 	}
@@ -50,11 +59,16 @@ public:
 	}
 
 	int calcTotalPrice() {
-		int total_price=0;
+		int total_price = 0;
 		for (int i = 0; i < _size; i++) {
 			total_price += (_orderList[i].getMenu().getPrice())*_orderList[i].getQuantity();
 		}
 		this->setTotalPrice(total_price);
 		return total_price;
+	}
+
+	void exitTable() {
+		Table *newTable = new Table();
+		 *this = *newTable;
 	}
 };
