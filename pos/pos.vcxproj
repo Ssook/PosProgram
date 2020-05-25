@@ -133,13 +133,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="MenuItem.cpp" />
+    <ClCompile Include="PosMenuItem.cpp" />
     <ClCompile Include="StartForm.cpp" />
+    <ClCompile Include="Table.cpp" />
     <ClCompile Include="TableForm.cpp" />
     <ClCompile Include="DetailForm.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MenuItem.h" />
+    <ClInclude Include="PosMenuItem.h" />
     <ClInclude Include="StartForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
