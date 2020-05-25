@@ -93,7 +93,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies />
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <EntryPointSymbol>main</EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
@@ -133,6 +133,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="PaymentForm.cpp" />
     <ClCompile Include="PosMenuItem.cpp" />
     <ClCompile Include="StartForm.cpp" />
     <ClCompile Include="Table.cpp" />
@@ -140,6 +141,9 @@
     <ClCompile Include="DetailForm.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="PaymentForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="PosMenuItem.h" />
     <ClInclude Include="StartForm.h">
       <FileType>CppForm</FileType>
@@ -154,6 +158,9 @@
     <ClInclude Include="Table.h" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="PaymentForm.resx">
+      <DependentUpon>PaymentForm.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StartForm.resx">
       <DependentUpon>StartForm.h</DependentUpon>
     </EmbeddedResource>
