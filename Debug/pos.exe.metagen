@@ -1,3 +1,5 @@
+  pos.AddMenuForm.resources - Embedded, ContainedInManifestFile, 
+  pos.ModifyMenuForm.resources - Embedded, ContainedInManifestFile, 
   pos.PaymentForm.resources - Embedded, ContainedInManifestFile, 
   pos.StartForm.resources - Embedded, ContainedInManifestFile, 
   pos.TableForm.resources - Embedded, ContainedInManifestFile, 
@@ -17,6 +19,12 @@ Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=
 	hash=None, flags=None
 Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
+Class pos.AddMenuForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class pos.MenuManageForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class pos.PaymentForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(Table*): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -29,3 +37,6 @@ Class pos.TableForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
 Class pos.StartForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class pos.ModifyMenuForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

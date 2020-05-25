@@ -93,7 +93,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies />
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <EntryPointSymbol>main</EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
@@ -133,6 +133,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AddMenuForm.cpp" />
+    <ClCompile Include="MenuManageForm.cpp" />
+    <ClCompile Include="ModifyMenuForm.cpp" />
     <ClCompile Include="PaymentForm.cpp" />
     <ClCompile Include="PosMenuItem.cpp" />
     <ClCompile Include="StartForm.cpp" />
@@ -141,6 +144,13 @@
     <ClCompile Include="DetailForm.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AddMenuForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MenuManageForm.h" />
+    <ClInclude Include="ModifyMenuForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="PaymentForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -158,6 +168,12 @@
     <ClInclude Include="Table.h" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AddMenuForm.resx">
+      <DependentUpon>AddMenuForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifyMenuForm.resx">
+      <DependentUpon>ModifyMenuForm.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PaymentForm.resx">
       <DependentUpon>PaymentForm.h</DependentUpon>
     </EmbeddedResource>

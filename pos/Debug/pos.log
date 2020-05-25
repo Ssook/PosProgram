@@ -1,3 +1,6 @@
-﻿  StartForm.cpp
-  PaymentForm.obj : MSIL 모듈이 발견되었습니다. MSIL에 증분 링크를 사용할 수 없습니다. 전체 링크를 수행하고 있습니다.
-  pos.vcxproj -> C:\Users\ssook\source\repos\pos\PosProgram\Debug\pos.exe
+﻿  MenuManageForm.cpp
+  ModifyMenuForm.cpp
+  StartForm.cpp
+  코드를 생성하고 있습니다...
+  AddMenuForm.obj : MSIL 모듈이 발견되었습니다. MSIL에 증분 링크를 사용할 수 없습니다. 전체 링크를 수행하고 있습니다.
+  pos.vcxproj -> C:\Users\e7ya8\Desktop\학교\(2020-1) 3-1\문제해결및실습：C++\C++ Team Project\PosProgram\Debug\pos.exe
