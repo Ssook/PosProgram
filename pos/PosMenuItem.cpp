@@ -9,3 +9,4 @@ PosMenuItem::PosMenuItem(string name, int price, int category) {
 PosMenuItem::PosMenuItem() {
 
 }
+

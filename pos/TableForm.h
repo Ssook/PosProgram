@@ -273,6 +273,9 @@ namespace pos {
 			this->label9->Size = System::Drawing::Size(80, 15);
 			this->label9->TabIndex = 9;
 			this->label9->Text = L"3번 테이블";
+			this->label9->Click += gcnew System::EventHandler(this, &TableForm::listView3_Click);
+
+
 			// 
 			// listView3
 			// 
@@ -319,6 +322,7 @@ namespace pos {
 			this->label12->Size = System::Drawing::Size(80, 15);
 			this->label12->TabIndex = 13;
 			this->label12->Text = L"4번 테이블";
+			this->label12->Click += gcnew System::EventHandler(this, &TableForm::listView4_Click);
 			// 
 			// listView4
 			// 
@@ -365,6 +369,7 @@ namespace pos {
 			this->label15->Size = System::Drawing::Size(80, 15);
 			this->label15->TabIndex = 17;
 			this->label15->Text = L"5번 테이블";
+			this->label15->Click += gcnew System::EventHandler(this, &TableForm::listView5_Click);
 			// 
 			// listView5
 			// 
@@ -411,6 +416,7 @@ namespace pos {
 			this->label18->Size = System::Drawing::Size(80, 15);
 			this->label18->TabIndex = 21;
 			this->label18->Text = L"6번 테이블";
+			this->label18->Click += gcnew System::EventHandler(this, &TableForm::listView6_Click);
 			// 
 			// listView6
 			// 
@@ -531,6 +537,7 @@ namespace pos {
 				listViewItem->SubItems->Add("" + table1->getOrder(i).getQuantity());
 				this->listView1->Items->Add(listViewItem);
 			}
+			this->label1->Text = "" + table1->calcTotalPrice();
 
 		}
 		System::Void listView2_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -546,7 +553,7 @@ namespace pos {
 				listViewItem->SubItems->Add("" + table2->getOrder(i).getQuantity());
 				this->listView2->Items->Add(listViewItem);
 			}
-
+			this->label4->Text = "" + table2->calcTotalPrice();
 		}
 		System::Void listView3_Click(System::Object^  sender, System::EventArgs^  e) {
 			this->Visible = false;
@@ -561,6 +568,7 @@ namespace pos {
 				listViewItem->SubItems->Add("" + table3->getOrder(i).getQuantity());
 				this->listView3->Items->Add(listViewItem);
 			}
+			this->label7->Text = "" + table3->calcTotalPrice();
 
 		}
 		System::Void listView4_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -576,6 +584,7 @@ namespace pos {
 				listViewItem->SubItems->Add("" + table4->getOrder(i).getQuantity());
 				this->listView4->Items->Add(listViewItem);
 			}
+			this->label10->Text = "" + table4->calcTotalPrice();
 		}
 		System::Void listView5_Click(System::Object^  sender, System::EventArgs^  e) {
 			this->Visible = false;
@@ -590,6 +599,7 @@ namespace pos {
 				listViewItem->SubItems->Add("" + table5->getOrder(i).getQuantity());
 				this->listView5->Items->Add(listViewItem);
 			}
+			this->label13->Text = "" + table5->calcTotalPrice();
 
 		}
 		System::Void listView6_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -605,7 +615,7 @@ namespace pos {
 				listViewItem->SubItems->Add("" + table6->getOrder(i).getQuantity());
 				this->listView6->Items->Add(listViewItem);
 			}
-
+			this->label16->Text = "" + table6->calcTotalPrice();
 		}
 
 

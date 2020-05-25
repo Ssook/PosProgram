@@ -48,4 +48,13 @@ public:
 	Order getOrder(int no) {
 		return _orderList[no];
 	}
+
+	int calcTotalPrice() {
+		int total_price=0;
+		for (int i = 0; i < _size; i++) {
+			total_price += (_orderList[i].getMenu().getPrice())*_orderList[i].getQuantity();
+		}
+		this->setTotalPrice(total_price);
+		return total_price;
+	}
 };
