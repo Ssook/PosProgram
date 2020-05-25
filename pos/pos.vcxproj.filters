@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="MenuItem.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="TableForm.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -27,11 +24,17 @@
     <ClCompile Include="StartForm.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="PosMenuItem.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Table.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="DBConnection.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MenuItem.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="Table.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
@@ -45,6 +48,12 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="DetailForm.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="PosMenuItem.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="DBConnection.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

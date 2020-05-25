@@ -75,6 +75,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>..\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -92,8 +94,8 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalDependencies />
-      <SubSystem>Windows</SubSystem>
+      <AdditionalDependencies>libmysql.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
       <EntryPointSymbol>main</EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
@@ -133,13 +135,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="MenuItem.cpp" />
+    <ClCompile Include="DBConnection.cpp" />
+    <ClCompile Include="PosMenuItem.cpp" />
     <ClCompile Include="StartForm.cpp" />
+    <ClCompile Include="Table.cpp" />
     <ClCompile Include="TableForm.cpp" />
     <ClCompile Include="DetailForm.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MenuItem.h" />
+    <ClInclude Include="DBConnection.h" />
+    <ClInclude Include="PosMenuItem.h" />
     <ClInclude Include="StartForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>

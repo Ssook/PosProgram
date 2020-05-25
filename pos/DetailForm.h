@@ -1,5 +1,7 @@
 #pragma once
+#include "DBConnection.h"
 #include "Table.h"
+#include "PosMenuItem.h"
 
 namespace pos {
 
@@ -17,12 +19,19 @@ namespace pos {
 	public ref class DetailForm : public System::Windows::Forms::Form
 	{
 	private: Table* order_table;
+			 PosMenuItem* items = new PosMenuItem[30];
+
 	public:
 
 		DetailForm(Table *order_table)
 		{
-			InitializeComponent();
 			this->order_table = order_table;
+			
+			DBConnection db;
+			
+			items = db.select_menu_item();
+			InitializeComponent();
+
 			//
 			//TODO: 생성자 코드를 여기에 추가합니다.
 			//
@@ -101,7 +110,8 @@ namespace pos {
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(177, 87);
 			this->button1->TabIndex = 6;
-			this->button1->Text = L"삼겹살";
+			String^ newSystemString = gcnew String(items[0].getName().c_str());
+			this->button1->Text = L"" + newSystemString;
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &DetailForm::button1_Click);
 			// 
@@ -111,7 +121,8 @@ namespace pos {
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(177, 87);
 			this->button2->TabIndex = 7;
-			this->button2->Text = L"소주";
+			newSystemString = gcnew String(items[1].getName().c_str());
+			this->button2->Text = L"" + newSystemString;
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &DetailForm::button2_Click);
 			// 
@@ -159,7 +170,7 @@ namespace pos {
 			this->listView1->Items->Clear();
 		}
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-		PosMenuItem item("삼겹살", 4500, 1);
+		PosMenuItem item(items[0].getName(), 4500, 1);
 		Order order(item, 1);
 		/*
 		for (int i = 0; i < order_table->getSize(); i++) {
@@ -180,7 +191,7 @@ namespace pos {
 
 	}
 	private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
-		PosMenuItem item("소주", 1500, 1);
+		PosMenuItem item(items[1].getName(), 1500, 1);
 		Order order(item, 1);
 		/*
 		for (int i = 0; i < order_table->getSize(); i++) {

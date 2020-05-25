@@ -4,7 +4,7 @@
 using namespace std;
 
 class PosMenuItem {
-private : 
+private:
 	string _name;
 	int _price;
 	int _category;
@@ -21,7 +21,7 @@ public:
 	void setCategory(int category) {
 		_category = category;
 	}
-	
+
 	string getName() {
 		return _name;
 	}
