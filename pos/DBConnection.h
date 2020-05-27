@@ -2,6 +2,8 @@
 #include <mysql.h>
 #include <msclr/marshal_cppstd.h>
 #include "Table.h"
+#include "Category.h"
+#include "Order.h"
 #include <cstdlib>	//atoi
 using namespace std;
 
@@ -23,4 +25,6 @@ public:
 	MYSQL DBConnect();
 
 	PosMenuItem* select_menu_item();
+	void insert_payment_info(Table table);
+	Category* select_menu_category();
 };

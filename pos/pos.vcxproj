@@ -135,6 +135,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Category.cpp" />
     <ClCompile Include="DBConnection.cpp" />
     <ClCompile Include="PaymentForm.cpp" />
     <ClCompile Include="PosMenuItem.cpp" />
@@ -144,6 +145,7 @@
     <ClCompile Include="DetailForm.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Category.h" />
     <ClInclude Include="DBConnection.h" />
     <ClInclude Include="PaymentForm.h">
       <FileType>CppForm</FileType>
