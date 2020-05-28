@@ -162,7 +162,7 @@ namespace pos {
 	}
 	private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) {
 		this->Visible = false;
-		pos::MenuManageForm MenuManageForm(3);
+		pos::MenuManageForm MenuManageForm;
 		MenuManageForm.Owner = this;
 		MenuManageForm.ShowDialog();
 	}

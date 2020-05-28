@@ -1,4 +1,6 @@
 #pragma once
+#include "AddMenuForm.h"
+#include "ModifyMenuForm.h"
 
 namespace pos {
 
@@ -20,7 +22,7 @@ namespace pos {
 	private: System::Windows::Forms::Label^  label1;
 	private: System::Windows::Forms::Button^  button3;
 	public:
-		MenuManageForm(int i)
+		MenuManageForm()
 		{
 			InitializeComponent();
 			//
@@ -116,18 +118,27 @@ namespace pos {
 
 		}
 #pragma endregion
-	
-	// 메인 메뉴로 이동
+
+		// 메인 메뉴로 이동
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+		this->Owner->Visible = true;
+		this->Close();
 	}
 
-	// 메뉴 추가 화면으로 이동
+			 // 메뉴 추가 화면으로 이동
 	private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
+		this->Visible = false;
+		pos::AddMenuForm AddMenuForm;
+		AddMenuForm.Owner = this;
+		AddMenuForm.ShowDialog();
 	}
 
-	// 메뉴 수정/삭제 화면으로 이동
+			 // 메뉴 수정/삭제 화면으로 이동
 	private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
-
+		this->Visible = false;
+		pos::ModifyMenuForm ModifyMenuForm;
+		ModifyMenuForm.Owner = this;
+		ModifyMenuForm.ShowDialog();
 	}
 
 	};

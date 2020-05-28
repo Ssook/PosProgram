@@ -1,4 +1,7 @@
 #pragma once
+#include "PosMenuItem.h"
+#include <msclr\marshal_cppstd.h>
+#include <string>
 
 namespace pos {
 
@@ -44,6 +47,7 @@ namespace pos {
 	private: System::Windows::Forms::Label^  label2;
 	private: System::Windows::Forms::TextBox^  textBox1;
 	private: System::Windows::Forms::Label^  label1;
+	private: System::Windows::Forms::Label^  label5;
 
 	private:
 		/// <summary>
@@ -67,6 +71,7 @@ namespace pos {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// label4
@@ -87,6 +92,7 @@ namespace pos {
 			this->button2->TabIndex = 17;
 			this->button2->Text = L"취소";
 			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &AddMenuForm::button2_Click);
 			// 
 			// button1
 			// 
@@ -96,6 +102,7 @@ namespace pos {
 			this->button1->TabIndex = 16;
 			this->button1->Text = L"확인";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &AddMenuForm::button1_Click);
 			// 
 			// comboBox1
 			// 
@@ -146,11 +153,21 @@ namespace pos {
 			this->label1->TabIndex = 10;
 			this->label1->Text = L"메뉴";
 			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Location = System::Drawing::Point(137, 88);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(38, 12);
+			this->label5->TabIndex = 19;
+			this->label5->Text = L"label5";
+			// 
 			// AddMenuForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(7, 12);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(360, 391);
+			this->Controls->Add(this->label5);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
@@ -170,5 +187,44 @@ namespace pos {
 #pragma endregion
 	private: System::Void AddMenuForm_Load(System::Object^  sender, System::EventArgs^  e) {
 	}
+
+	private:void MarshalString(String ^ s, string& os) {
+		using namespace Runtime::InteropServices;
+		const char* chars =
+			(const char*)(Marshal::StringToHGlobalAnsi(s)).ToPointer();
+		os = chars;
+		Marshal::FreeHGlobal(IntPtr((void*)chars));
+	}
+
+	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+
+		// 정보를 모두 입력하지 않았을 경우
+		if (textBox1->Text == "" || textBox2->Text == "" || comboBox1->Text == "")
+			MessageBox::Show("메뉴 정보를 모두 입력하세요");
+		// 메뉴 이름 이미 존재하는 경우 처리 추가
+
+		// 입력받은 데이터 처리
+		String^ menuName = textBox1->Text;
+		String^ menuPrice = textBox2->Text;
+		String^ menuCategory = comboBox1->Text;
+
+		std::string name = msclr::interop::marshal_as<std::string>(menuName);
+		std::string price = msclr::interop::marshal_as<std::string>(menuPrice);
+		std::string category = msclr::interop::marshal_as<std::string>(menuCategory);
+
+		int Iprice = std::stoi(price);
+		int ICategory = std::stoi(category);
+
+		// PosMenuItem 객체 생성
+		PosMenuItem item(name, Iprice, ICategory);		
+
+	}
+
+	// 메뉴 추가 취소 > 이전 화면인 메뉴 관리 화면으로 이동
+	private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
+		this->Owner->Visible = true;
+		this->Close();
+	}
+
 };
 }

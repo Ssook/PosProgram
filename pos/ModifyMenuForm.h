@@ -1,5 +1,7 @@
 #pragma once
-#include "StartForm.h"
+#include "PosMenuItem.h"
+#include <msclr\marshal_cppstd.h>
+#include <string>
 
 namespace pos {
 
@@ -16,7 +18,7 @@ namespace pos {
 	public ref class ModifyMenuForm : public System::Windows::Forms::Form
 	{
 	public:
-		ModifyMenuForm(int i)
+		ModifyMenuForm()
 		{
 			InitializeComponent();
 			//
@@ -117,6 +119,7 @@ namespace pos {
 			this->listView1->TabIndex = 0;
 			this->listView1->UseCompatibleStateImageBehavior = false;
 			this->listView1->View = System::Windows::Forms::View::Details;
+			this->listView1->SelectedIndexChanged += gcnew System::EventHandler(this, &ModifyMenuForm::listView1_SelectedIndexChanged);
 			// 
 			// groupBox1
 			// 
@@ -244,21 +247,42 @@ namespace pos {
 
 		// 뒤로가기(메뉴관리 메뉴로)
 	private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) {
-
+		this->Owner->Visible = true;
+		this->Close();
 	}
 
-			 // 메인메뉴로
+		// 메인메뉴로 // 근데 여기 이렇게 해도 될런지 ... ?????? 고민스럽지만 우선 이렇게 해봐써여
 	private: System::Void button5_Click(System::Object^  sender, System::EventArgs^  e) {
-
+		this->Owner->Owner->Visible = true;
+		this->Close();
 	}
-			 //삭제이벤트
-	private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
+		//삭제이벤트
+	private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		//MessageBox::Show("정말 삭제하시겠습니까?","확인", MessageBoxButtons::OKCancel);
 	}
 
-			 // 수정 이벤트
+		// 수정 이벤트
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+		// 여기 기능 추가해야함
+		// 입력받은 데이터 처리
+		String^ menuName = textBox1->Text;
+		String^ menuPrice = textBox2->Text;
+		String^ menuCategory = comboBox1->Text;
+
+		std::string name = msclr::interop::marshal_as<std::string>(menuName);
+		std::string price = msclr::interop::marshal_as<std::string>(menuPrice);
+		std::string category = msclr::interop::marshal_as<std::string>(menuCategory);
+
+		int Iprice = std::stoi(price);
+		int ICategory = std::stoi(category);
+
+		// PosMenuItem 객체 생성
+		PosMenuItem item(name, Iprice, ICategory);
 	}
 
 
-	};
+	private: System::Void listView1_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+	}
+};
 }

@@ -88,9 +88,6 @@
     <EmbeddedResource Include="PaymentForm.resx">
       <Filter>리소스 파일</Filter>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuManageForm.resx">
-      <Filter>리소스 파일</Filter>
-    </EmbeddedResource>
     <EmbeddedResource Include="ModifyMenuForm.resx">
       <Filter>리소스 파일</Filter>
     </EmbeddedResource>
