@@ -137,8 +137,10 @@
     <ClCompile Include="AddMenuForm.cpp" />
     <ClCompile Include="MenuManageForm.cpp" />
     <ClCompile Include="ModifyMenuForm.cpp" />
+    <ClCompile Include="MonthSalesForm.cpp" />
     <ClCompile Include="PaymentForm.cpp" />
     <ClCompile Include="PosMenuItem.cpp" />
+    <ClCompile Include="SalesForm.cpp" />
     <ClCompile Include="StartForm.cpp" />
     <ClCompile Include="Table.cpp" />
     <ClCompile Include="TableForm.cpp" />
@@ -154,10 +156,16 @@
     <ClInclude Include="ModifyMenuForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="MonthSalesForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="PaymentForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="PosMenuItem.h" />
+    <ClInclude Include="SalesForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="StartForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -173,6 +181,9 @@
   <ItemGroup>
     <EmbeddedResource Include="AddMenuForm.resx">
       <DependentUpon>AddMenuForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuManageForm.resx">
+      <DependentUpon>MenuManageForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModifyMenuForm.resx">
       <DependentUpon>ModifyMenuForm.h</DependentUpon>

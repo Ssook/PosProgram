@@ -42,6 +42,12 @@
     <ClCompile Include="MenuManageForm.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="SalesForm.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="MonthSalesForm.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Table.h">
@@ -72,6 +78,12 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="MenuManageForm.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="SalesForm.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="MonthSalesForm.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

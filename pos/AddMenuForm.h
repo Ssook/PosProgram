@@ -78,17 +78,18 @@ namespace pos {
 			// 
 			this->label4->Font = (gcnew System::Drawing::Font(L"굴림", 21.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(129)));
-			this->label4->Location = System::Drawing::Point(101, 40);
+			this->label4->Location = System::Drawing::Point(115, 50);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(143, 34);
+			this->label4->Size = System::Drawing::Size(163, 42);
 			this->label4->TabIndex = 18;
 			this->label4->Text = L"메뉴 추가";
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(235, 320);
+			this->button2->Location = System::Drawing::Point(269, 400);
+			this->button2->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(59, 29);
+			this->button2->Size = System::Drawing::Size(67, 36);
 			this->button2->TabIndex = 17;
 			this->button2->Text = L"취소";
 			this->button2->UseVisualStyleBackColor = true;
@@ -96,9 +97,10 @@ namespace pos {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(170, 320);
+			this->button1->Location = System::Drawing::Point(194, 400);
+			this->button1->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(59, 29);
+			this->button1->Size = System::Drawing::Size(67, 36);
 			this->button1->TabIndex = 16;
 			this->button1->Text = L"확인";
 			this->button1->UseVisualStyleBackColor = true;
@@ -107,66 +109,70 @@ namespace pos {
 			// comboBox1
 			// 
 			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Location = System::Drawing::Point(43, 263);
+			this->comboBox1->Location = System::Drawing::Point(49, 329);
+			this->comboBox1->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(267, 20);
+			this->comboBox1->Size = System::Drawing::Size(305, 23);
 			this->comboBox1->TabIndex = 15;
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(52, 239);
+			this->label3->Location = System::Drawing::Point(59, 299);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(53, 12);
+			this->label3->Size = System::Drawing::Size(67, 15);
 			this->label3->TabIndex = 14;
 			this->label3->Text = L"카테고리";
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(43, 198);
+			this->textBox2->Location = System::Drawing::Point(49, 248);
+			this->textBox2->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(267, 21);
+			this->textBox2->Size = System::Drawing::Size(305, 25);
 			this->textBox2->TabIndex = 13;
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(52, 174);
+			this->label2->Location = System::Drawing::Point(59, 218);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(29, 12);
+			this->label2->Size = System::Drawing::Size(37, 15);
 			this->label2->TabIndex = 12;
 			this->label2->Text = L"가격";
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(43, 138);
+			this->textBox1->Location = System::Drawing::Point(49, 172);
+			this->textBox1->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(267, 21);
+			this->textBox1->Size = System::Drawing::Size(305, 25);
 			this->textBox1->TabIndex = 11;
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(52, 114);
+			this->label1->Location = System::Drawing::Point(59, 142);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(29, 12);
+			this->label1->Size = System::Drawing::Size(37, 15);
 			this->label1->TabIndex = 10;
 			this->label1->Text = L"메뉴";
 			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(137, 88);
+			this->label5->Location = System::Drawing::Point(157, 110);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(38, 12);
+			this->label5->Size = System::Drawing::Size(45, 15);
 			this->label5->TabIndex = 19;
 			this->label5->Text = L"label5";
 			// 
 			// AddMenuForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(7, 12);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 15);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(360, 391);
+			this->ClientSize = System::Drawing::Size(411, 489);
+			this->ControlBox = false;
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->button2);
@@ -177,6 +183,8 @@ namespace pos {
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->label1);
+			this->DoubleBuffered = true;
+			this->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->Name = L"AddMenuForm";
 			this->Text = L"AddMenuForm";
 			this->Load += gcnew System::EventHandler(this, &AddMenuForm::AddMenuForm_Load);

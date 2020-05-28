@@ -2,6 +2,7 @@
 #include "MenuManageForm.h"
 #include "TableForm.h"
 #include "Table.h"
+#include "SalesForm.h"
 
 namespace pos {
 
@@ -158,7 +159,10 @@ namespace pos {
 	}
 
 	private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
-
+		this->Visible = false;
+		pos::SalesForm salesform;
+		salesform.Owner = this;
+		salesform.ShowDialog();
 	}
 	private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) {
 		this->Visible = false;
