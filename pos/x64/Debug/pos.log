@@ -1,37 +1,9 @@
-﻿  AddMenuForm.cpp
-  Category.cpp
-  DBConnection.cpp
-c:\project\posprogram\pos\dbconnection.cpp(61): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\string.h(132): note: 'strcpy' 선언을 참조하십시오.
-c:\project\posprogram\pos\dbconnection.cpp(62): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdio.h(1772): note: 'sprintf' 선언을 참조하십시오.
-  MenuManageForm.cpp
-  ModifyMenuForm.cpp
-  MonthSalesForm.cpp
-  PaymentForm.cpp
-  PosMenuItem.cpp
-  SalesForm.cpp
+﻿  MenuItem.cpp
   StartForm.cpp
-  Table.cpp
+c:\project\posprogram\pos\startform.cpp(7): warning C4829: main 함수에 대한 매개 변수가 잘못된 것 같습니다. 'int main(Platform::Array<Platform::String^>^ argv)'를 사용하십시오.
   TableForm.cpp
   DetailForm.cpp
   코드를 생성하고 있습니다...
   .NETFramework,Version=v4.6.1.AssemblyAttributes.cpp
-  AddMenuForm.obj : MSIL 모듈이 발견되었습니다. MSIL에 증분 링크를 사용할 수 없습니다. 전체 링크를 수행하고 있습니다.
-DBConnection.obj : error LNK2028: 해결되지 않은 토큰(0A000481) "extern "C" char const * __cdecl mysql_error(struct st_mysql *)" (?mysql_error@@$$J0YAPEBDPEAUst_mysql@@@Z)을(를) "public: __cdecl DBConnection::DBConnection(void)" (??0DBConnection@@$$FQEAA@XZ) 함수에서 참조했습니다.
-DBConnection.obj : error LNK2028: 해결되지 않은 토큰(0A000494) "extern "C" struct st_mysql * __cdecl mysql_init(struct st_mysql *)" (?mysql_init@@$$J0YAPEAUst_mysql@@PEAU1@@Z)을(를) "public: __cdecl DBConnection::DBConnection(void)" (??0DBConnection@@$$FQEAA@XZ) 함수에서 참조했습니다.
-DBConnection.obj : error LNK2028: 해결되지 않은 토큰(0A0004DE) "extern "C" char * * __cdecl mysql_fetch_row(struct st_mysql_res *)" (?mysql_fetch_row@@$$J0YAPEAPEADPEAUst_mysql_res@@@Z)을(를) "public: class PosMenuItem * __cdecl DBConnection::select_menu_item(void)" (?select_menu_item@DBConnection@@$$FQEAAPEAVPosMenuItem@@XZ) 함수에서 참조했습니다.
-DBConnection.obj : error LNK2028: 해결되지 않은 토큰(0A0004E4) "extern "C" int __cdecl mysql_query(struct st_mysql *,char const *)" (?mysql_query@@$$J0YAHPEAUst_mysql@@PEBD@Z)을(를) "public: class PosMenuItem * __cdecl DBConnection::select_menu_item(void)" (?select_menu_item@DBConnection@@$$FQEAAPEAVPosMenuItem@@XZ) 함수에서 참조했습니다.
-DBConnection.obj : error LNK2028: 해결되지 않은 토큰(0A000503) "extern "C" void __cdecl mysql_close(struct st_mysql *)" (?mysql_close@@$$J0YAXPEAUst_mysql@@@Z)을(를) "public: __cdecl DBConnection::~DBConnection(void)" (??1DBConnection@@$$FQEAA@XZ) 함수에서 참조했습니다.
-DBConnection.obj : error LNK2028: 해결되지 않은 토큰(0A000531) "extern "C" int __cdecl mysql_options(struct st_mysql *,enum mysql_option,void const *)" (?mysql_options@@$$J0YAHPEAUst_mysql@@W4mysql_option@@PEBX@Z)을(를) "public: __cdecl DBConnection::DBConnection(void)" (??0DBConnection@@$$FQEAA@XZ) 함수에서 참조했습니다.
-DBConnection.obj : error LNK2028: 해결되지 않은 토큰(0A000554) "extern "C" struct st_mysql * __cdecl mysql_real_connect(struct st_mysql *,char const *,char const *,char const *,char const *,unsigned int,char const *,unsigned long)" (?mysql_real_connect@@$$J0YAPEAUst_mysql@@PEAU1@PEBD111I1K@Z)을(를) "public: __cdecl DBConnection::DBConnection(void)" (??0DBConnection@@$$FQEAA@XZ) 함수에서 참조했습니다.
-DBConnection.obj : error LNK2028: 해결되지 않은 토큰(0A000576) "extern "C" struct st_mysql_res * __cdecl mysql_store_result(struct st_mysql *)" (?mysql_store_result@@$$J0YAPEAUst_mysql_res@@PEAUst_mysql@@@Z)을(를) "public: class PosMenuItem * __cdecl DBConnection::select_menu_item(void)" (?select_menu_item@DBConnection@@$$FQEAAPEAVPosMenuItem@@XZ) 함수에서 참조했습니다.
-DBConnection.obj : error LNK2019: "extern "C" void __cdecl mysql_close(struct st_mysql *)" (?mysql_close@@$$J0YAXPEAUst_mysql@@@Z) 외부 기호(참조 위치: "public: __cdecl DBConnection::~DBConnection(void)" (??1DBConnection@@$$FQEAA@XZ) 함수)에서 확인하지 못했습니다.
-DBConnection.obj : error LNK2019: "extern "C" struct st_mysql * __cdecl mysql_init(struct st_mysql *)" (?mysql_init@@$$J0YAPEAUst_mysql@@PEAU1@@Z) 외부 기호(참조 위치: "public: __cdecl DBConnection::DBConnection(void)" (??0DBConnection@@$$FQEAA@XZ) 함수)에서 확인하지 못했습니다.
-DBConnection.obj : error LNK2019: "extern "C" int __cdecl mysql_options(struct st_mysql *,enum mysql_option,void const *)" (?mysql_options@@$$J0YAHPEAUst_mysql@@W4mysql_option@@PEBX@Z) 외부 기호(참조 위치: "public: __cdecl DBConnection::DBConnection(void)" (??0DBConnection@@$$FQEAA@XZ) 함수)에서 확인하지 못했습니다.
-DBConnection.obj : error LNK2019: "extern "C" struct st_mysql * __cdecl mysql_real_connect(struct st_mysql *,char const *,char const *,char const *,char const *,unsigned int,char const *,unsigned long)" (?mysql_real_connect@@$$J0YAPEAUst_mysql@@PEAU1@PEBD111I1K@Z) 외부 기호(참조 위치: "public: __cdecl DBConnection::DBConnection(void)" (??0DBConnection@@$$FQEAA@XZ) 함수)에서 확인하지 못했습니다.
-DBConnection.obj : error LNK2019: "extern "C" char const * __cdecl mysql_error(struct st_mysql *)" (?mysql_error@@$$J0YAPEBDPEAUst_mysql@@@Z) 외부 기호(참조 위치: "public: __cdecl DBConnection::DBConnection(void)" (??0DBConnection@@$$FQEAA@XZ) 함수)에서 확인하지 못했습니다.
-DBConnection.obj : error LNK2019: "extern "C" int __cdecl mysql_query(struct st_mysql *,char const *)" (?mysql_query@@$$J0YAHPEAUst_mysql@@PEBD@Z) 외부 기호(참조 위치: "public: class PosMenuItem * __cdecl DBConnection::select_menu_item(void)" (?select_menu_item@DBConnection@@$$FQEAAPEAVPosMenuItem@@XZ) 함수)에서 확인하지 못했습니다.
-DBConnection.obj : error LNK2019: "extern "C" struct st_mysql_res * __cdecl mysql_store_result(struct st_mysql *)" (?mysql_store_result@@$$J0YAPEAUst_mysql_res@@PEAUst_mysql@@@Z) 외부 기호(참조 위치: "public: class PosMenuItem * __cdecl DBConnection::select_menu_item(void)" (?select_menu_item@DBConnection@@$$FQEAAPEAVPosMenuItem@@XZ) 함수)에서 확인하지 못했습니다.
-DBConnection.obj : error LNK2019: "extern "C" char * * __cdecl mysql_fetch_row(struct st_mysql_res *)" (?mysql_fetch_row@@$$J0YAPEAPEADPEAUst_mysql_res@@@Z) 외부 기호(참조 위치: "public: class PosMenuItem * __cdecl DBConnection::select_menu_item(void)" (?select_menu_item@DBConnection@@$$FQEAAPEAVPosMenuItem@@XZ) 함수)에서 확인하지 못했습니다.
-C:\project\PosProgram\x64\Debug\pos.exe : fatal error LNK1120: 16개의 확인할 수 없는 외부 참조입니다.
+  MenuItem.obj : MSIL 모듈이 발견되었습니다. MSIL에 증분 링크를 사용할 수 없습니다. 전체 링크를 수행하고 있습니다.
+LINK : fatal error LNK1561: 진입점이 정의되어야 합니다.
