@@ -1,5 +1,8 @@
 #pragma once
+#include "MenuManageForm.h"
 #include "TableForm.h"
+#include "Table.h"
+#include "SalesForm.h"
 
 namespace pos {
 
@@ -22,7 +25,9 @@ namespace pos {
 		Table *table3;
 		Table *table4;
 		Table *table5;
-		Table *table6;
+	private: System::Windows::Forms::Button^  button3;
+	private: System::Windows::Forms::Button^  button4;
+			 Table *table6;
 
 	public:
 		StartForm(void)
@@ -38,7 +43,7 @@ namespace pos {
 			//TODO: 생성자 코드를 여기에 추가합니다.
 			//
 		}
-			
+
 
 	protected:
 		/// <summary>
@@ -70,13 +75,16 @@ namespace pos {
 		{
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(286, 111);
+			this->button1->Location = System::Drawing::Point(250, 89);
+			this->button1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(175, 79);
+			this->button1->Size = System::Drawing::Size(153, 63);
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"1. 영업시작";
 			this->button1->UseVisualStyleBackColor = true;
@@ -84,23 +92,49 @@ namespace pos {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(635, 3);
+			this->button2->Location = System::Drawing::Point(556, 2);
+			this->button2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(85, 44);
+			this->button2->Size = System::Drawing::Size(74, 35);
 			this->button2->TabIndex = 1;
 			this->button2->Text = L"종료하기";
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &StartForm::button2_Click);
 			// 
+			// button3
+			// 
+			this->button3->Location = System::Drawing::Point(250, 156);
+			this->button3->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(153, 63);
+			this->button3->TabIndex = 2;
+			this->button3->Text = L"2. 매출관리";
+			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &StartForm::button3_Click);
+			// 
+			// button4
+			// 
+			this->button4->Location = System::Drawing::Point(250, 223);
+			this->button4->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(153, 63);
+			this->button4->TabIndex = 3;
+			this->button4->Text = L"3. 메뉴관리";
+			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &StartForm::button4_Click);
+			// 
 			// StartForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 15);
+			this->AutoScaleDimensions = System::Drawing::SizeF(7, 12);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(732, 503);
+			this->ClientSize = System::Drawing::Size(640, 402);
 			this->ControlBox = false;
+			this->Controls->Add(this->button4);
+			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
 			this->DoubleBuffered = true;
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"StartForm";
 			this->Text = L"Start";
 			this->Load += gcnew System::EventHandler(this, &StartForm::Start_Load);
@@ -113,18 +147,28 @@ namespace pos {
 		pos::TableForm TableForm(table1, table2, table3, table4, table5, table6);
 		TableForm.Owner = this;
 		TableForm.ShowDialog();
-	
+
 	}
 	private: System::Void Start_Load(System::Object^ sender, System::EventArgs^ e) {
-		
+
 	}
 
 
 	private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
 		this->Close();
 	}
+
+	private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
+		this->Visible = false;
+		pos::SalesForm salesform;
+		salesform.Owner = this;
+		salesform.ShowDialog();
+	}
+	private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) {
+		this->Visible = false;
+		pos::MenuManageForm MenuManageForm;
+		MenuManageForm.Owner = this;
+		MenuManageForm.ShowDialog();
+	}
 	};
-
-
-
 }

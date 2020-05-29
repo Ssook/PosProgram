@@ -7,18 +7,18 @@
 #include <cstdlib>	//atoi
 using namespace std;
 
-class DBConnection{
+class DBConnection {
 private:
 	const char* server_ip = "54.173.116.26";
 	const char* user = "user";
-	const char* pw ="513246";
+	const char* pw = "513246";
 	const char* db_name = "pos";
 
 	MYSQL *connection = NULL, conn;
 	MYSQL_RES *sql_result;
 	MYSQL_ROW sql_row;
 	int query_stat;
-	
+
 public:
 	DBConnection();
 	~DBConnection();

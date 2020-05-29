@@ -1,7 +1,20 @@
-﻿  DBConnection.cpp
-c:\project\posprogram\pos\dbconnection.cpp(60): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+﻿  AddMenuForm.cpp
+  Category.cpp
+  DBConnection.cpp
+c:\project\posprogram\pos\dbconnection.cpp(61): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\string.h(132): note: 'strcpy' 선언을 참조하십시오.
-c:\project\posprogram\pos\dbconnection.cpp(61): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\project\posprogram\pos\dbconnection.cpp(62): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdio.h(1772): note: 'sprintf' 선언을 참조하십시오.
-  Category.obj : MSIL 모듈이 발견되었습니다. MSIL에 증분 링크를 사용할 수 없습니다. 전체 링크를 수행하고 있습니다.
+  MenuManageForm.cpp
+  ModifyMenuForm.cpp
+  MonthSalesForm.cpp
+  PaymentForm.cpp
+  PosMenuItem.cpp
+  SalesForm.cpp
+  StartForm.cpp
+  Table.cpp
+  TableForm.cpp
+  DetailForm.cpp
+  코드를 생성하고 있습니다...
+  AddMenuForm.obj : MSIL 모듈이 발견되었습니다. MSIL에 증분 링크를 사용할 수 없습니다. 전체 링크를 수행하고 있습니다.
   pos.vcxproj -> C:\project\PosProgram\Debug\pos.exe

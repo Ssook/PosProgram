@@ -8,7 +8,7 @@ DBConnection::DBConnection() {
 	mysql_options(&conn, MYSQL_SET_CHARSET_NAME, "utf8");
 	mysql_options(&conn, MYSQL_INIT_COMMAND, "SET NAMES utf8");
 	connection = mysql_real_connect(&conn, server_ip, user, pw, db_name, 3306, (char *)NULL, 0);
-	
+
 	if (connection == NULL) {
 		//connection error
 		cout << "Mysql connection error : " << mysql_error(&conn) << endl;
@@ -21,7 +21,7 @@ DBConnection::DBConnection() {
 DBConnection::~DBConnection() {
 	mysql_close(connection);
 }
-
+//주용
 PosMenuItem* DBConnection::select_menu_item() {
 	PosMenuItem* menu_items = new PosMenuItem[300];
 	mysql_query(connection, "set names euckr");
@@ -33,7 +33,7 @@ PosMenuItem* DBConnection::select_menu_item() {
 	sql_result = mysql_store_result(connection);
 	int i = 0;
 	while ((sql_row = mysql_fetch_row(sql_result)) != NULL) {
-		
+
 		sql_row[0];	//no
 		menu_items[i].setCategory(atoi(sql_row[1]));	//category
 		menu_items[i].setName(sql_row[2]);	//name
@@ -45,6 +45,7 @@ PosMenuItem* DBConnection::select_menu_item() {
 	return menu_items;
 }
 
+//주용
 void DBConnection::insert_payment_info(Table param_table) {
 	mysql_query(connection, "set names euckr");
 	char query[255];
@@ -69,7 +70,7 @@ void DBConnection::insert_payment_info(Table param_table) {
 		mysql_close(connection);
 	}
 
-	
+
 	cout << "insert_complete" << endl;
 	return;
 }

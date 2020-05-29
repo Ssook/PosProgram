@@ -1,5 +1,6 @@
 #pragma once
 #include "DetailForm.h"
+#include "Table.h"
 
 namespace pos {
 
@@ -23,6 +24,7 @@ namespace pos {
 		Table *table5;
 		Table *table6;
 	private: System::Windows::Forms::ListView^  listView1;
+	public:
 	private: System::Windows::Forms::ColumnHeader^  columnHeader1;
 	private: System::Windows::Forms::ColumnHeader^  columnHeader2;
 	private: System::Windows::Forms::Label^  label1;

@@ -80,6 +80,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>..\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -97,6 +99,7 @@
       <AdditionalDependencies>libmysql.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
       <EntryPointSymbol>main</EntryPointSymbol>
+      <AdditionalLibraryDirectories>..\include;..\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -131,26 +134,48 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AddMenuForm.cpp" />
     <ClCompile Include="Category.cpp" />
     <ClCompile Include="DBConnection.cpp" />
+    <ClCompile Include="MenuManageForm.cpp" />
+    <ClCompile Include="ModifyMenuForm.cpp" />
+    <ClCompile Include="MonthSalesForm.cpp" />
     <ClCompile Include="PaymentForm.cpp" />
     <ClCompile Include="PosMenuItem.cpp" />
+    <ClCompile Include="SalesForm.cpp" />
     <ClCompile Include="StartForm.cpp" />
     <ClCompile Include="Table.cpp" />
     <ClCompile Include="TableForm.cpp" />
     <ClCompile Include="DetailForm.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AddMenuForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Category.h" />
     <ClInclude Include="DBConnection.h" />
+    <ClInclude Include="MenuManageForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ModifyMenuForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MonthSalesForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="PaymentForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="PosMenuItem.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="SalesForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="StartForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -164,6 +189,12 @@
     <ClInclude Include="Table.h" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AddMenuForm.resx">
+      <DependentUpon>AddMenuForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifyMenuForm.resx">
+      <DependentUpon>ModifyMenuForm.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PaymentForm.resx">
       <DependentUpon>PaymentForm.h</DependentUpon>
     </EmbeddedResource>
@@ -176,6 +207,9 @@
     <EmbeddedResource Include="DetailForm.resx">
       <DependentUpon>DetailForm.h</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="pos.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

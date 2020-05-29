@@ -21,7 +21,7 @@ namespace pos {
 		PosMenuItem* items = new PosMenuItem;
 		Category* categorys = new Category;
 		Order* orders = new Order;
-		
+
 	private: Table* order_table;
 	private: System::Windows::Forms::Button^  category1;
 	private: System::Windows::Forms::Button^  category2;
@@ -39,14 +39,14 @@ namespace pos {
 	private: System::Windows::Forms::Label^  label3;
 	private: System::Windows::Forms::Label^  label4;
 
-	
+
 
 	public:
 
 		DetailForm(Table *order_table)
 		{
 			this->order_table = order_table;
-			
+
 			DBConnection db;
 			categorys = db.select_menu_category();
 			items = db.select_menu_item();
@@ -100,7 +100,7 @@ namespace pos {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
-			
+
 			this->category1 = (gcnew System::Windows::Forms::Button());
 			this->category2 = (gcnew System::Windows::Forms::Button());
 			columnHeader1 = (gcnew System::Windows::Forms::ColumnHeader());
@@ -361,5 +361,5 @@ namespace pos {
 			redrawListView();
 		}
 	}
-};
+	};
 }
